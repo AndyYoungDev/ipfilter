@@ -10,12 +10,9 @@ include "Pdo.php";
 $ins=\app\Pdo::getInstance();
 //PDO句柄
 $pdo=$ins->handle;
-
 //获取IP并转换int型
 $ip=$_SERVER['REMOTE_ADDR'];
-if ($ip=='[::1]'||$ip=='::1'){
-    $ip="127.0.0.1";
-}
+
 $ip=ip2long($ip);
 
 //查询是否在规定时间内存在某ip
